@@ -10,11 +10,12 @@ using Microsoft.Extensions.Logging;
 
 namespace APP.Pages.Categories
 {
+    [BindProperties]
     public class Create : PageModel
     {
         private readonly ILogger<Create> _logger;
         private readonly ApplicationDbContext _db;
-
+        // [BindProperty]
         public Category Category { get; set; }
 
         public Create(ILogger<Create> logger, ApplicationDbContext db)
@@ -27,8 +28,8 @@ namespace APP.Pages.Categories
         {
         }
 
-        public async Task<IActionResult> OnPost(Category category){
-            await _db.Category.AddAsync(category);
+        public async Task<IActionResult> OnPost(){
+            await _db.Category.AddAsync(Category);
             await _db.SaveChangesAsync();
             return RedirectToPage("Index");
         }
