@@ -10,9 +10,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlServe
     builder.Configuration.GetConnectionString("DefaultConnection")
 ));
 
-builder.Services.AddDbContext<ApplicationDbContextSqlite>(options =>options.UseSqlite(
-    builder.Configuration.GetConnectionString("DefaultConnectionSqlite")
-));
+// builder.Services.AddDbContext<ApplicationDbContextSqlite>(options =>options.UseSqlite(
+//     builder.Configuration.GetConnectionString("DefaultConnectionSqlite")
+// ));
 
 var app = builder.Build();
 

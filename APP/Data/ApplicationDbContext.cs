@@ -17,13 +17,13 @@ namespace APP.Data
         public DbSet<Category> Category { get; set; }
     }
 
-    public class ApplicationDbContextSqlite : DbContext
-    {
-        public ApplicationDbContextSqlite(DbContextOptions<ApplicationDbContextSqlite> options) : base(options)
-        {
+    // public class ApplicationDbContextSqlite : DbContext
+    // {
+    //     public ApplicationDbContextSqlite(DbContextOptions<ApplicationDbContextSqlite> options) : base(options)
+    //     {
             
-        }
+    //     }
 
-        public DbSet<Category> Category { get; set; }
-    }
+    //     public DbSet<Category> Category { get; set; }
+    // }
 }
