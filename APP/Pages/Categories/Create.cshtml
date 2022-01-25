@@ -1,0 +1,18 @@
+@page
+@model APP.Pages.Categories.Create
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <form method="post">
+        <label asp-for="Category.Name"></label>
+        <input asp-for="Category.Name" type="text"  />
+        <label asp-for="Category.DisplayOrder"></label>
+        <input asp-for="Category.DisplayOrder" type="text" />
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    
+</div>
