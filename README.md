@@ -57,8 +57,16 @@ git push -u origin main
 
 
 # migrations in visual studio code
+
+<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.1" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.1">
+
 $dotnet tool install --global dotnet-ef
+
 #verify via dotnet ef
+
 #run below (make sure app is not running via dotnet watch run or dotnet run)
 $dotnet ef migrations add migration-name
 $dotnet ef database update
@@ -66,6 +74,11 @@ $dotnet ef migrations remove
 
 $ dotnet ef migrations add InitialCreate --context MvcMovieContext
 $ dotnet ef database update --context MvcMovieContext
+
+dotnet ef migrations add AddCategory --context ApplicationDbContext --output-dir Migrations/SqlServerMigrations
+dotnet ef migrations add AddCategory --context ApplicationDbContextSqlite --output-dir Migrations/SqliteMigrations
+dotnet ef database update --context ApplicationDbContext
+dotnet ef database update --context ApplicationDbContextSqlite
 
 
 Package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
