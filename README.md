@@ -84,5 +84,6 @@ dotnet ef database update --context ApplicationDbContextSqlite
 Package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
  
 
-
+scaffolded Razor Pages in ASP.NET Core
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/model?view=aspnetcore-6.0&tabs=visual-studio-code
 
