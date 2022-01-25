@@ -1,13 +1,14 @@
 @page
-@model APP.Pages.Categories.Create
+@model APP.Pages.Categories.Edit
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <div>
     <form method="post">
+        <input asp-for="Category.Id" hidden />
         <div asp-validation-summary="All"></div>
         <div>
             <label asp-for="Category.Name"></label>
@@ -19,8 +20,8 @@
             <input asp-for="Category.DisplayOrder" type="text" />
             <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
-        <a asp-page="../Index" class="btn btn-default">Back</a>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a asp-page="Index" class="btn btn-default">Back</a>
     </form>
     
 </div>

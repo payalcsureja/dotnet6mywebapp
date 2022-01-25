@@ -11,21 +11,22 @@ using Microsoft.Extensions.Logging;
 namespace APP.Pages.Categories
 {
     [BindProperties]
-    public class Create : PageModel
+    public class Edit : PageModel
     {
-        private readonly ILogger<Create> _logger;
+        private readonly ILogger<Edit> _logger;
         private readonly ApplicationDbContext _db;
         // [BindProperty]
         public Category Category { get; set; }
 
-        public Create(ILogger<Create> logger, ApplicationDbContext db)
+        public Edit(ILogger<Edit> logger, ApplicationDbContext db)
         {
             _logger = logger;
             _db = db;
         }
 
-        public void OnGet()
+        public void OnGet(int id)
         {
+            Category =_db.Category.Find(id);
         }
 
         public async Task<IActionResult> OnPost(){
@@ -35,9 +36,9 @@ namespace APP.Pages.Categories
             }
 
             if(ModelState.IsValid){
-                await _db.Category.AddAsync(Category);
+                _db.Category.Update(Category);
                 await _db.SaveChangesAsync();
-                TempData["success"] = "Created successfully";
+                TempData["success"] = "Updated successfully";
                 return RedirectToPage("Index");
             }
             return Page();

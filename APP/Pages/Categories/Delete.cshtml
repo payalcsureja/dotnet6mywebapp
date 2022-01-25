@@ -1,0 +1,25 @@
+@page
+@model APP.Pages.Categories.Delete
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <form method="post">
+        <input asp-for="Category.Id" hidden />         
+        <div>
+            <label asp-for="Category.Name"></label>
+            <input asp-for="Category.Name" disabled type="text"  />            
+        </div>
+        <div>
+            <label asp-for="Category.DisplayOrder"></label>
+            <input asp-for="Category.DisplayOrder" disabled type="text" />            
+        </div>
+        <button type="submit" class="btn btn-primary">Remove</button>
+        <a asp-page="Index" class="btn btn-default">Back</a>
+    </form>
+    
+</div>
+ 

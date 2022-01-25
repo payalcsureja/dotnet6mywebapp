@@ -18,8 +18,8 @@
             <div class="col-12">
                 <div>Name:@cat.Name</div>
                 <div>DisplayOrder:@cat.DisplayOrder</div>
-                <div><a asp-page="edit" class="btn btn-primary" >Edit</a></div>
-                <div><a asp-page="delete" class="btn btn-primary" >Delete</a></div>
+                <div><a asp-page="edit" asp-route-id="@cat.Id" class="btn btn-primary" >Edit</a></div>
+                <div><a asp-page="delete" asp-route-id="@cat.Id" class="btn btn-primary" >Delete</a></div>
 
                 <br/>
             </div>

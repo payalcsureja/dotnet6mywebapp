@@ -11,35 +11,34 @@ using Microsoft.Extensions.Logging;
 namespace APP.Pages.Categories
 {
     [BindProperties]
-    public class Create : PageModel
+    public class Delete : PageModel
     {
-        private readonly ILogger<Create> _logger;
+        private readonly ILogger<Delete> _logger;
         private readonly ApplicationDbContext _db;
         // [BindProperty]
         public Category Category { get; set; }
 
-        public Create(ILogger<Create> logger, ApplicationDbContext db)
+        public Delete(ILogger<Delete> logger, ApplicationDbContext db)
         {
             _logger = logger;
             _db = db;
         }
 
-        public void OnGet()
+        public void OnGet(int id)
         {
+            Category =_db.Category.Find(id);
         }
 
         public async Task<IActionResult> OnPost(){
-
-            if(Category.Name == Category.DisplayOrder.ToString()){
-                ModelState.AddModelError(string.Empty, "NAme and Display order can not be same.");
-            }
-
-            if(ModelState.IsValid){
-                await _db.Category.AddAsync(Category);
+             
+            var categoryFromDb =_db.Category.Find(Category.Id);
+            if(categoryFromDb != null){
+                _db.Category.Remove(categoryFromDb);
                 await _db.SaveChangesAsync();
-                TempData["success"] = "Created successfully";
-                return RedirectToPage("Index");
-            }
+                TempData["success"] = "Deleted successfully";
+                return RedirectToPage("Index");                    
+            }              
+             
             return Page();
             
         }
