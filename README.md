@@ -87,3 +87,6 @@ Package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
 scaffolded Razor Pages in ASP.NET Core
 https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/model?view=aspnetcore-6.0&tabs=visual-studio-code
 
+# Add utility classlib project in same solution
+ dotnet new classlib -o APP.Utility
+ dotnet sln add APP.Utility
