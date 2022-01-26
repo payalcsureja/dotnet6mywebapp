@@ -23,6 +23,18 @@ namespace APP.Utility
             // Send email
             using (var emailClient = new SmtpClient())
             {
+                // // gmail
+                // emailClient.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
+
+                // // hotmail
+                // emailClient.Connect("smtp.live.com", 587, SecureSocketOptions.StartTls);
+
+                // // office 365
+                // emailClient.Connect("smtp.office365.com", 587, SecureSocketOptions.StartTls);
+
+                // // aws ses (simple email service)
+                // emailClient.Connect("email-smtp.[AWS REGION].amazonaws.com", 587, SecureSocketOptions.StartTls);
+
                 emailClient.Connect("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
                 emailClient.Authenticate("pcsureja.dev@gmail.com", "gmailpassword");
                 emailClient.Send(emailToSend);
