@@ -96,3 +96,6 @@ https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/model?view=as
 
  Add package Microsoft.AspNetCore.Identity.UI.Services and import 
  Implement Interface...
+
+
+Google smtp settings: turn on less secure access from account security manager

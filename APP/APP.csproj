@@ -16,4 +16,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\APP.Utility\APP.Utility.csproj" />
+  </ItemGroup>
+
+
 </Project>

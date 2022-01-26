@@ -1,4 +1,6 @@
 using APP.Data;
+using APP.Utility;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlServe
 // builder.Services.AddDbContext<ApplicationDbContextSqlite>(options =>options.UseSqlite(
 //     builder.Configuration.GetConnectionString("DefaultConnectionSqlite")
 // ));
+
+builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 
