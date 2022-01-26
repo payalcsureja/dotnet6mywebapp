@@ -90,3 +90,9 @@ https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/model?view=as
 # Add utility classlib project in same solution
  dotnet new classlib -o APP.Utility
  dotnet sln add APP.Utility
+
+ Add SD - static detail static class
+ Add EmailSender class : IEmailSender
+
+ Add package Microsoft.AspNetCore.Identity.UI.Services and import 
+ Implement Interface...
